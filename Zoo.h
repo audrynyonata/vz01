@@ -37,7 +37,7 @@ public:
 	  
 	/** @brief Operator[].
 	  * Operator subscript.
-	  * @param Z Zoo berisi data untuk diassign
+	  * @param x integer menjadi indeks 
 	  */	  
 	Proxy operator[](int x)
 	{
