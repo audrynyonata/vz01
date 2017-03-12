@@ -3,14 +3,16 @@
 
 #include "other.h"
 #include "Animal.h"
-#include "Cell.h"
+#include "Cage.h"
 #include <iostream>
 using namespace std;
 
 
 	Cage::Cage()
 	{
-		
+		size = 0;
+		* c;
+		* a;	
 	}
 	
 	Cage::Cage(int _size)

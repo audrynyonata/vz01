@@ -11,24 +11,19 @@ int main(){
 	ifstream fin;
 	int Neff;
 	int indeks;
-	
-	fin.open("vz03.txt");
+	Cage *c;
+	int size;
+	fin.open("tcage.txt");
 	fin >> Neff;
-	Animal a[Neff];
-	for (indeks = 0; indeks < Neff; indeks++)
+	c = new Cage [Neff];
+	fin >> size;
+	Cage[indeks].size = size;
+	for (indeks =0 ; indeks<size ; indeks++)
 	{
-		fin >> a[indeks];
-		cout << indeks;
+		fin >> a[indeks].x;
+		fin >> a[indeks].y;
 	}
-
 	fin.close();
-
-	for (indeks = 0; indeks < Neff; indeks++)
-	{
-		a[indeks].interact();
-		cout <<indeks;
-	}
-
 	
 	return 0;
 }

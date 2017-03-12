@@ -19,7 +19,8 @@ public:
 	  * @param _name nama binatang
 	  * @param _weight berat binatang
 	  * @param _sex jenis kelamin;
-	  * @param _heartChamber banyaknya ruang jantung binatang;
+	  * @param _heartChamber banyaknya ruang jantung binatang
+	  * @param _blood properti binatang berdarah hangat/dingin
 	  * @param _vegRatio rasio makanan sayuran
 	  * @param _meatRatio rasio makanan daging
 	  * @param _id karakter renderable
@@ -28,8 +29,7 @@ public:
 	  * @param _n indeks posisi kolom
 	  * @param _habitat jenis habitat binatang;
 	  */
-	Animal(Species _species, string _name, double _weight, Sex _sex, int _heartChamber, double _vegRatio, double _meatRatio, char _id, Color _color, int _m, int _n, Habitat _habitat);
-	
+	Animal(Species _species, string _name, double _weight, Sex _sex, int _heartChamber, char _blood, double _vegRatio, double _meatRatio, char _id, Color _color, int _m, int _n, Habitat _habitat);
 	/** @brief Copy Constructor
 	* @param Animal A yang ingin disalin.
 	*/
@@ -58,7 +58,7 @@ public:
 	/** @brief GetWeight
 	  * @return berat binatang
 	  */
-	double Animal::getWeight();
+	double getWeight();
 	
 	/** @brief getVegRatio
 	  * @return rasio makanan sayuran binatang
@@ -102,6 +102,7 @@ private:
 	double weight;
 	Sex sex;
 	int heartChamber;
+	char blood;
 	double vegRatio, meatRatio;
 	char id;
 	Color color;
