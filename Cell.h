@@ -32,6 +32,18 @@ public:
 	  */
 	Cell& operator=(const Cell& C);
 
+	/** @brief getId
+	 * Mengembalikan karakter id dari current cell 
+	 * @return karakter current cell
+	 */
+	char getId();
+
+	/** @brief getColor
+	 * Mengembalikan warna dari current cell
+	 * @return warna current cell
+	 */
+	Color getColor();
+
 private:
 	Place type;
 	char id;

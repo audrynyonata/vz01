@@ -34,3 +34,10 @@ Cell& Cell::operator=(const Cell& C){
 	n=C.n;
 }
 
+char Cell::getId(){
+	return id;
+}
+
+Color Cell::getColor(){
+	return color;
+}
