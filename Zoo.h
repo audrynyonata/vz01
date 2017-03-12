@@ -3,6 +3,7 @@
 
 #pragma once
 #include "Cell.h"
+#include <iostream>
 using namespace std;
 
 /** @class Zoo
@@ -34,18 +35,32 @@ public:
 	  */
 	Zoo& operator=(const Zoo& Z);
 
-	  
-	/** @brief Operator[].
-	  * Operator subscript.
-	  * @param x integer menjadi indeks 
-	  */	  
-	Proxy operator[](int x)
-	{
-		return Proxy(*this, x);
-	}
+	/** @brief operator>>.
+	  * Menginput suatu Zoo dari file eksternal
+	  * @param in operator input
+	  * @param Z Zoo yang dibuat 
+	  */
+	friend istream& operator>>(istream& in, Zoo& Z);
+
+
+	/** @brief operator>>.
+	  * Mencetak suatu Zoo ke layar
+	  * @param in operator output
+	  * @param Z Zoo yang dicetak
+	  */	
+	friend ostream& operator<<(ostream& os, const Zoo& Z);
+
+	/** @brief Display.
+	  * Mencetak suatu Zoo (dengan batas) ke layar
+	  * @param x1 baris terkiri
+	  * @param y1 kolom teratas
+	  * @param x2 baris terkanan
+	  * @param y2 kolom terbawah
+	  */	
+	void Display(int x1, int y1, int x2, int y2);
 
 private:
-	Cell ** *c;  	                /* matriks of pointer to cell */
+	Cell** c;  	                /* matriks of pointer to cell */
 	int row; 				        /* ukuran baris */
 	int col; 				        /* ukuran kolom */
 	static const int defRow = 50; 	/* default baris = 10 */

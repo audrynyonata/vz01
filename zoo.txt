@@ -1,0 +1,9 @@
+8 9
+# # # O O O X X X
+# # # O O O X X X
+# O O O O O X X X
+o - - O O X X X X
+R R - - - - - * *
+R R * * * - - * *
+X X - - - - - R *
+X X i i # # # # *
