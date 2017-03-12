@@ -24,7 +24,9 @@ Cell::Cell(const Cell& C){
 	n=C.n;
 }
 
-Cell::~Cell(){};
+Cell::~Cell()
+{
+}
 
 Cell& Cell::operator=(const Cell& C){
 	type=C.type;

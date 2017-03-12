@@ -11,20 +11,22 @@ int main(){
 	ifstream fin;
 	int Neff;
 	int indeks;
-	int j;
 	Cage *cage;
 	
 	fin.open("tcage.txt");
 	fin >> Neff;
 	cage = new Cage [Neff];
 	
-	
+	int j;
+	int temp;
 	int size;
 	for(j=0;j<Neff;j++)
 	{
 		fin >> size;
 		for (indeks =0 ; indeks<size ; indeks++)
 		{
+			fin >> temp;
+			cage[Neff].setValue(indeks,temp);
 		}
 	}
 	fin.close();

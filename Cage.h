@@ -36,8 +36,15 @@ public:
 	  */
 	Cage& operator=(const Cage& C);
 
+	/** @brief SetValue
+	  * Mengisi array c[i] dengan nilai v
+	  * @param i indeks
+	  * @param v value
+	  */
+	void setValue(int i, int v);
+
 private:
 	int size;
-	Cell * c;
+	int * c;
 	Animal * a;	
 };
