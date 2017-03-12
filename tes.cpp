@@ -41,25 +41,25 @@ int main ()
 				sex = MALE;
 			}
 			
-			if (hab == "WATERHABITAT")
+			if (hab == "WATERANIMAL")
 			{
 				color = CYAN;
-				habitat = WATERHABITAT;
+				habitat = WATERANIMAL;
 			}
-			else if (hab == "AIRHABITAT")
+			else if (hab == "FLYINGANIMAL")
 			{
 				color = RED;
-				habitat = AIRHABITAT;
+				habitat = FLYINGANIMAL;
 			}
 			else if (hab == "AMPHIBIAN")
 			{
 				color = GREEN;
-				habitat = WATERHABITAT;
+				habitat = AMPHIBIAN;
 			}
 			else
 			{
 				color = YELLOW;
-				habitat = LANDHABITAT;
+				habitat = LANDANIMAL;
 			}
 			
 			if (s == "ELEPHANT")
