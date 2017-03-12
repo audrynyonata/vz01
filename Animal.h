@@ -49,8 +49,52 @@ public:
 	  * Menampilkan experience yang dialami pengamat dengan hewan.
 	  */
 	virtual void interact();
-
-	//friend istream& operator>>(istream& in, Animal& A);
+	
+	/** @brief Operator>>
+	  * Overload operator istream
+	  */
+	friend istream& operator>>(istream& in, Animal& );
+	
+	/** @brief GetWeight
+	  * @return berat binatang
+	  */
+	double Animal::getWeight();
+	
+	/** @brief getVegRatio
+	  * @return rasio makanan sayuran binatang
+	  */
+	double getVegRatio();
+	
+	/** @brief getMeatRatio
+	  * @return rasio makanan daging binatang
+	  */
+	double getMeatRatio();
+	
+	/** @brief GetId
+	  * @return karakter renderable
+	  */
+	char getId();
+	
+	/** @brief GetColor
+	  * @return warna renderable
+	  */
+	Color getColor();
+	
+	/** @brief GetM
+	  * @return indeks posisi baris
+	  */
+	  int getM();
+	  
+	/** @brief GetN
+	  * @return indeks posisi kolom
+	  */
+	  int getN();
+	  
+	/** @brief GetHabitat
+	  * @return Habitat binatang
+	  */
+	  Habitat getHabitat();
+	
 
 private:
 	Species species;

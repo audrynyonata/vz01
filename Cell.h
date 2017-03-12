@@ -32,8 +32,6 @@ public:
 	  */
 	Cell& operator=(const Cell& C);
 
-	//friend istream& operator>>(istream& in, Animal& A);
-
 private:
 	Place type;
 	char id;
