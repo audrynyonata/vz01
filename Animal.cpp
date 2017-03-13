@@ -11,22 +11,24 @@ using namespace std;
 		weight = 0;
 		sex = MALE;
 		heartChamber = 0;
+		blood = 'h';
 		vegRatio = 0;
 		meatRatio = 0;
 		id = '?';
 		color = RED;
 		m = 0;
 		n = 0;
-		habitat = LANDHABITAT;
+		habitat = LANDANIMAL;
 	}
 	
-	Animal::Animal(Species _species, string _name, double _weight, Sex _sex, int _heartChamber, double _vegRatio, double _meatRatio, char _id, Color _color, int _m, int _n, Habitat _habitat)
+	Animal::Animal(Species _species, string _name, double _weight, Sex _sex, int _heartChamber, char _blood, double _vegRatio, double _meatRatio, char _id, Color _color, int _m, int _n, Habitat _habitat)
 	{
 		species = _species;
 		name = _name;
 		weight = _weight;
 		sex = _sex;
 		heartChamber = _heartChamber;
+		blood = _blood;
 		vegRatio = _vegRatio;
 		meatRatio = _meatRatio;
 		id = _id;
@@ -43,6 +45,7 @@ using namespace std;
 		weight = A.weight;
 		sex = A.sex;
 		heartChamber = A.heartChamber;
+		blood = A.blood;
 		vegRatio = A.vegRatio;
 		meatRatio = A.meatRatio;
 		id = A.id;
@@ -63,6 +66,7 @@ using namespace std;
 		weight = A.weight;
 		sex = A.sex;
 		heartChamber = A.heartChamber;
+		blood = A.blood;
 		vegRatio = A.vegRatio;
 		meatRatio = A.meatRatio;
 		id = A.id;
@@ -169,4 +173,194 @@ using namespace std;
 		{
 			cout<< "This turtle is walking slowly" << endl;
 		}
+	}
+
+	istream& operator>>(istream& in, Animal& A)
+	{
+		string s,name;
+		double weight;
+		string gender;
+		Sex sex;
+		int hc;
+		char blood;
+		double vr, mr;
+		char id;
+		Color color;
+		int m;
+		int n;
+		string hab;
+		Habitat habitat;
+		
+		in >> s >> name >> weight >> gender >> hc >> blood >> vr >> mr >> id >> m >> n >> hab;
+		if (gender == "FEMALE")
+		{
+			sex = FEMALE;
+		}
+		else
+		{
+			sex = MALE;
+		}
+		
+		if (hab == "WATERANIMAL")
+		{
+			color = CYAN;
+			habitat = WATERANIMAL;
+		}
+		else if (hab == "FLYINGANIMAL")
+		{
+			color = RED;
+			habitat = FLYINGANIMAL;
+		}
+		else if (hab == "AMPHIBIAN")
+		{
+			color = GREEN;
+			habitat = AMPHIBIAN;
+		}
+		else
+		{
+			color = YELLOW;
+			habitat = LANDANIMAL;
+		}
+		
+		if (s == "ELEPHANT")
+		{
+			A = Animal (ELEPHANT, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+		}
+		
+		else if (s == "GIRAFFE")
+		{
+			A = Animal(GIRAFFE, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "LION")
+		{
+			A = Animal(LION, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "TIGER")
+		{
+			A = Animal(TIGER, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "ORANGUTAN")
+		{
+			A = Animal(ORANGUTAN, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat);
+		}	
+		else if (s == "CHIMPANZEE")
+		{
+			A = Animal(CHIMPANZEE, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "KOMODO")
+		{
+			A = Animal(KOMODO, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "BEAR")
+		{
+			A = Animal(BEAR, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "WHALE")
+		{
+			A = Animal(WHALE, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "DOLPHIN")
+		{
+			A = Animal(DOLPHIN, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "CLOWNFISH")
+		{
+			A = Animal(CLOWNFISH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "BLUETANG")
+		{
+			A = Animal(BLUETANG, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "PIRANHA")
+		{
+			A = Animal(PIRANHA, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "PUFFFISH")
+		{
+			A = Animal(PUFFFISH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "EAGLE")
+		{
+			A = Animal(EAGLE, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "CENDRAWASIH")
+		{
+			A = Animal(CENDRAWASIH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "OWL")
+		{
+			A = Animal(OWL, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "BAT")
+		{
+			A = Animal(BAT, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "MACAU")
+		{
+			A = Animal(MACAU, name, weight, sex, hc,blood, vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "COCKATOO")
+		{
+			A = Animal(COCKATOO, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "FROG")
+		{
+			A = Animal(FROG, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "ALLIGATOR")
+		{
+			A = Animal(ALLIGATOR, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "HIPPOPOTAMUS")
+		{	
+			A = Animal(HIPPOPOTAMUS, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+		}
+		else if (s == "TURTLE")
+		{
+			A = Animal(TURTLE, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+		}
+		else
+		{
+		}
+		return in;
+	}
+	
+	double Animal::getWeight()
+	{
+		return weight;
+	}
+
+	double Animal::getVegRatio()
+	{
+		return vegRatio;
+	}
+	
+	double Animal::getMeatRatio()
+	{
+		return meatRatio;
+	}
+	
+	char Animal::getId()
+	{
+		return id;
+	}
+	
+	Color Animal::getColor()
+	{
+		return color;
+	}
+	
+	int Animal::getM()
+	{
+		return m;
+	}
+	
+	int Animal::getN()
+	{
+		return n;
+	}	
+	
+	Habitat Animal::getHabitat()
+	{
+		return habitat;
 	}
