@@ -179,7 +179,7 @@ using namespace std;
 	{
 		species = _s;
 	}
-	Species getSpecies()
+	Species Animal::getSpecies()
 	{
 		return species;
 	}
