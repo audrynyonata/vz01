@@ -1,18 +1,18 @@
 15 15
-X X X X X * * X X X # # # # #
+X X X X X * X X X X # # # # #
 X X X X X * R X X X # # # # #
-o - - # # # - - - - - - - - i
-# # - # # # - # # # # # # # #
-# # - O O O - # # # # # # # #
-# # - O O O - - - - X X - - o
-* * - O O O X X X - X X - X X
-* R - O O O X X X - X X - X X
-O O - - - - - X X - X X - X X
-O O - X X X - # # - X X - X X
-O O - X X X - # # - X X - X X
+o - - O # # - - - - - - - - i
+# # - O # # - # # X X # # # #
+# # - O X X - # # X X X # # #
+# # - O X X - - - - X X - - o
+# * - # # O O O O - X X - O O
+* R - # # O O O O - X X - O O
+O O - - - - - O O - X X - O O
+O O - X X X - # # - X X - O O
+O O - X X X - # # - X X - O O
 O O - X X X - # # - X X - # #
 o - - X X X - # # - - - - # #
-# # # # X X - O O O O O O # #
-# # # # # # i O O O O O O # #
+# # # # X X - # # # O O O # #
+# # # # # # i # # # O O O # #
 
 
