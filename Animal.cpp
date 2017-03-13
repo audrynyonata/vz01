@@ -17,7 +17,7 @@ using namespace std;
 		color = RED;
 		m = 0;
 		n = 0;
-		habitat = LANDHABITAT;
+		habitat = LANDANIMAL;
 	}
 	
 	Animal::Animal(Species _species, string _name, double _weight, Sex _sex, int _heartChamber, double _vegRatio, double _meatRatio, char _id, Color _color, int _m, int _n, Habitat _habitat)
@@ -169,4 +169,13 @@ using namespace std;
 		{
 			cout<< "This turtle is walking slowly" << endl;
 		}
+	}
+	
+	void Animal::setSpecies(Species _s)
+	{
+		species = _s;
+	}
+	Species getSpecies()
+	{
+		return species;
 	}

@@ -16,6 +16,10 @@ using namespace std;
 		{
 			c[indeks]=0;
 		}
+		for (int indeks = 0; indeks < size ; indeks++)
+		{
+			a[indeks].setSpecies(NONE);
+		}
 	}
 	
 	Cage::Cage(int _size)
@@ -25,6 +29,10 @@ using namespace std;
 		for (int indeks = 0; indeks < size; indeks++)
 		{
 			c[indeks]=0;
+		}
+		for (int indeks = 0; indeks < size ; indeks++)
+		{
+			a[indeks].setSpecies(NONE);
 		}
 	}
 	
@@ -60,3 +68,36 @@ using namespace std;
 		c[i] = v;
 	}
 
+void Cage::getValue(int i)
+	{
+		cout <<c[i]<< endl;
+	}
+	
+int Cage::getSize()
+{
+	return size;
+}
+
+void Cage::setSize(int _size)
+{
+	size = _size;
+}
+void Cage::setAnimal(int i, Animal v)
+{
+	a[i] = v;
+}
+Animal Cage::getAnimal(int i)
+{
+	return a[i];
+}
+bool Cage::isFull()	
+{
+	int count;
+	for (int i=0; i<size; i++)
+	{
+		if (a[i].getSpecies() != NONE)
+			count++;
+	}
+	return (count > 0.3*size);
+}
+	

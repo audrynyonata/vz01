@@ -23,13 +23,23 @@ int main(){
 	for(j=0;j<Neff;j++)
 	{
 		fin >> size;
-		for (indeks =0 ; indeks<size ; indeks++)
+		cage[j].setSize(size);
+		for (indeks =0 ; indeks<size*2 ; indeks++)
 		{
 			fin >> temp;
-			cage[Neff].setValue(indeks,temp);
+			cage[j].setValue(indeks,temp);
 		}
 	}
-	fin.close();
 	
+	
+	
+	fin.close();
+	for(j=0;j<Neff;j++)
+	{
+		for (indeks =0 ; indeks<cage[j].getSize()*2 ; indeks++)
+		{
+			cage[j].getValue(indeks);
+		}
+	}
 	return 0;
 }

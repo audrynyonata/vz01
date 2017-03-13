@@ -95,6 +95,8 @@ public:
 	  */
 	  Habitat getHabitat();
 	
+	void setSpecies(Species _s);
+	Species getSpecies();
 
 private:
 	Species species;
