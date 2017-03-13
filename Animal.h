@@ -29,7 +29,7 @@ public:
 	  * @param _n indeks posisi kolom
 	  * @param _habitat jenis habitat binatang;
 	  */
-	Animal(Species _species, string _name, double _weight, Sex _sex, int _heartChamber, char _blood, double _vegRatio, double _meatRatio, char _id, Color _color, int _m, int _n, Habitat _habitat);
+	Animal(Species _species, string _name, double _weight, Sex _sex, int _heartChamber, char _blood, double _vegRatio, double _meatRatio, char _id, Color _color, int _m, int _n, Habitat _habitat, int _wild);
 	/** @brief Copy Constructor
 	* @param Animal A yang ingin disalin.
 	*/
@@ -94,8 +94,20 @@ public:
 	  * @return Habitat binatang
 	  */
 	  Habitat getHabitat();
-	
+	  /** @brief getWild
+	  * @return buas / tidak nya binatang, 1=buas, 0=jinak
+	  */
+	  int getWild();
+ 	/** @brief setSpecies
+ 	  * Mengatur jenis spesies dari binatang
+	  * @param jenis spesies hewan
+	  */
 	void setSpecies(Species _s);
+
+	/** @brief getSpecies
+ 	  * Mengembalikan jenis spesies binatang
+	  * @return spesies binatang
+	  */
 	Species getSpecies();
 
 private:
@@ -111,4 +123,5 @@ private:
 	int m;
 	int n;
 	Habitat habitat;
+	int wild;
 };
