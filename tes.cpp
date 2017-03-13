@@ -9,67 +9,64 @@
 using namespace std;
 
 int main(){
-	//ifstream finCage;
-	int NeffC;
-	int indeksC;
-	Cage *cage;
 	ifstream fin;
-	int Neff;
-	int indeks;
-	Animal *a;
-/*	ifstream finAni;
 	int NeffA;
-	int indeksA;
-	Animal *a;*/
+	int NeffC;
 	
+	Cage *cage;
+	Animal *a;
+	
+	int indeks;
+	int j;
+	int temp;
+	int size;
+
+	fin.open("vz03.txt");
+	fin >> NeffA;
+	a = new Animal [NeffA];
+	for (indeks =0 ; indeks<NeffA; indeks++)
+	{
+		fin >> a[indeks];
+	}
+	fin.close();
+
 	fin.open("tcage.txt");
 	fin >> NeffC;
 	cage = new Cage [NeffC];
 	
-	int j;
-	int temp;
-	int size;
 	for(j=0;j<NeffC;j++)
 	{
 		fin >> size;
 		cage[j].setSize(size);
-		for (indeksC =0 ; indeksC<size*2 ; indeksC++)
+		for (indeks =0 ; indeks<size*2 ; indeks++)
 		{
 			fin >> temp;
-			cage[j].setValue(indeksC,temp);
+			cage[j].setValue(indeks,temp);
 		}
 	}
-	
 	fin.close();
-/*	for(j=0;j<Neff;j++)
+
+	for (indeks =0 ; indeks<NeffA; indeks++)
 	{
-		for (indeks =0 ; indeks<cage[j].getSize()*2 ; indeks++)
+		cout << a[indeks].getId() << endl;
+	}
+	
+	for(j=0;j<NeffC;j++)
+	{
+		size = cage[j].getSize();
+		for (indeks =0 ; indeks<size*2 ; indeks++)
 		{
 			cage[j].getValue(indeks);
 		}
-	}*/
+	}
 	
 	
-	
-	fin.open("vz03.txt");
-	fin >> Neff;
-	a = new Animal [Neff];
-	for (indeks =0 ; indeks<Neff; indeks++)
+	bool found = false;
+	int x,y;
+	for (indeks = 0; indeks<NeffA; indeks++)
 	{
-		fin >> a[indeks];
-		cout << a[indeks].getId() << endl;
+		
 	}
-	fin.close();
-	
-/*	finAni.open("vz03.txt");
-	finAni >> NeffA;
-	a = new Animal [NeffA];
-	for (indeksA =0 ; indeksA<NeffA; indeksA++)
-	{	
-	//	finAni >> a[indeksA];
-	//	cout << a[indeksA].getId() << endl;
-	}
-	finAni.close();*/
 	
 	return 0;
 }
