@@ -19,9 +19,10 @@ using namespace std;
 		m = 0;
 		n = 0;
 		habitat = LANDANIMAL;
+		wild=1;
 	}
 	
-	Animal::Animal(Species _species, string _name, double _weight, Sex _sex, int _heartChamber, char _blood, double _vegRatio, double _meatRatio, char _id, Color _color, int _m, int _n, Habitat _habitat)
+	Animal::Animal(Species _species, string _name, double _weight, Sex _sex, int _heartChamber, char _blood, double _vegRatio, double _meatRatio, char _id, Color _color, int _m, int _n, Habitat _habitat, int _wild)
 	{
 		species = _species;
 		name = _name;
@@ -36,6 +37,7 @@ using namespace std;
 		m = _m;
 		n = _n;
 		habitat = _habitat;
+		wild=_wild;
 	}
 
 	Animal::Animal(const Animal& A)
@@ -53,6 +55,7 @@ using namespace std;
 		m = A.m;
 		n = A.n;
 		habitat = A.habitat;
+		wild=A.wild;
 	}
 
 	Animal::~Animal()
@@ -74,6 +77,7 @@ using namespace std;
 		m = A.m;
 		n = A.n;
 		habitat = A.habitat;
+		wild=A.wild;
 	}
 
 	void Animal::interact()
@@ -233,100 +237,100 @@ using namespace std;
 		
 		if (s == "ELEPHANT")
 		{
-			A = Animal (ELEPHANT, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+			A = Animal (ELEPHANT, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
 		}
 		
 		else if (s == "GIRAFFE")
 		{
-			A = Animal(GIRAFFE, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat);
+			A = Animal(GIRAFFE, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,0);
 		}
 		else if (s == "LION")
 		{
-			A = Animal(LION, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat);
+			A = Animal(LION, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,1);
 		}
 		else if (s == "TIGER")
 		{
-			A = Animal(TIGER, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat);
+			A = Animal(TIGER, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,1);
 		}
 		else if (s == "ORANGUTAN")
 		{
-			A = Animal(ORANGUTAN, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat);
+			A = Animal(ORANGUTAN, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,0);
 		}	
 		else if (s == "CHIMPANZEE")
 		{
-			A = Animal(CHIMPANZEE, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat);
+			A = Animal(CHIMPANZEE, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,0);
 		}
 		else if (s == "KOMODO")
 		{
-			A = Animal(KOMODO, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+			A = Animal(KOMODO, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,1);
 		}
 		else if (s == "BEAR")
 		{
-			A = Animal(BEAR, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+			A = Animal(BEAR, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,1);
 		}
 		else if (s == "WHALE")
 		{
-			A = Animal(WHALE, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+			A = Animal(WHALE, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
 		}
 		else if (s == "DOLPHIN")
 		{
-			A = Animal(DOLPHIN, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+			A = Animal(DOLPHIN, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
 		}
 		else if (s == "CLOWNFISH")
 		{
-			A = Animal(CLOWNFISH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+			A = Animal(CLOWNFISH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
 		}
 		else if (s == "BLUETANG")
 		{
-			A = Animal(BLUETANG, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+			A = Animal(BLUETANG, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
 		}
 		else if (s == "PIRANHA")
 		{
-			A = Animal(PIRANHA, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+			A = Animal(PIRANHA, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,1);
 		}
 		else if (s == "PUFFFISH")
 		{
-			A = Animal(PUFFFISH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+			A = Animal(PUFFFISH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
 		}
 		else if (s == "EAGLE")
 		{
-			A = Animal(EAGLE, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+			A = Animal(EAGLE, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,1);
 		}
 		else if (s == "CENDRAWASIH")
 		{
-			A = Animal(CENDRAWASIH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+			A = Animal(CENDRAWASIH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
 		}
 		else if (s == "OWL")
 		{
-			A = Animal(OWL, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat);
+			A = Animal(OWL, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
 		}
 		else if (s == "BAT")
 		{
-			A = Animal(BAT, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+			A = Animal(BAT, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,1);
 		}
 		else if (s == "MACAU")
 		{
-			A = Animal(MACAU, name, weight, sex, hc,blood, vr, mr, id, color, m,n,habitat);
+			A = Animal(MACAU, name, weight, sex, hc,blood, vr, mr, id, color, m,n,habitat,0);
 		}
 		else if (s == "COCKATOO")
 		{
-			A = Animal(COCKATOO, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+			A = Animal(COCKATOO, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
 		}
 		else if (s == "FROG")
 		{
-			A = Animal(FROG, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+			A = Animal(FROG, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
 		}
 		else if (s == "ALLIGATOR")
 		{
-			A = Animal(ALLIGATOR, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+			A = Animal(ALLIGATOR, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
 		}
 		else if (s == "HIPPOPOTAMUS")
 		{	
-			A = Animal(HIPPOPOTAMUS, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+			A = Animal(HIPPOPOTAMUS, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,1);
 		}
 		else if (s == "TURTLE")
 		{
-			A = Animal(TURTLE, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat);
+			A = Animal(TURTLE, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
 		}
 		else
 		{
@@ -372,4 +376,9 @@ using namespace std;
 	Habitat Animal::getHabitat()
 	{
 		return habitat;
+	}
+
+	int Animal::getWild()
+	{
+		return wild;
 	}
