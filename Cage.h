@@ -61,6 +61,11 @@ public:
 	  */
 	double ConsumedVeg();
 	
+	/** @brief PrintInteract
+	  * Memanggil interact milik semua binatang di kandang
+	  */
+	void Cage::PrintInteract()
+
 private:
 	int size;
 	int * c;
