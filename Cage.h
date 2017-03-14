@@ -43,14 +43,48 @@ public:
 	  * @param v value
 	  */
 	void setValue(int i, int v);
+	/** @brief GetValue
+	  * Mengembalikan c[i]
+	  * @param i indeks
+	  * @return nilai c[i]
+	  */
 	int getValue(int i);
-	int getSize();
+	
+	/** @brief SetSize
+	  * Mengisi size dengan nilai _size
+	  * @param _size size
+	  * @param v value
+	  */
 	void setSize(int _size);
+	/** @brief GetSize
+	  * Mengembalikan size
+	  * @return size
+	  */
+	int getSize();
+	/** @brief SetAnimal
+	  * Mengisi a[i] dengan nilai v
+	  * @param v value
+	  */
 	void setAnimal(Animal v);
+	/** @brief GetAnimal
+	  * Mengembalikan a[i] 
+	  * @return nilai array a dengan indeks i
+	  */
 	Animal getAnimal(int i);
 	
+	/** @brief isFull
+	  * Memeriksa apakah cage full atau tidak
+	  */
 	bool isFull();
+	/** @brief Search
+	  * Memeriksa apakah ada pasangan nilai m dan n dalam array c
+	  */
 	bool Search(int m, int n);
+	
+	/** @brief GetCellAnimal
+	  * Mengembalikan animal dengan posisi m,n
+	  * @return animal dengan posisi m,n
+	  */
 	Animal GetCellAnimal(int m, int n);
 	
 	/** @brief Mengembalikan jumlah daging yang diperlukan kebun binatang dalam 1 hari
