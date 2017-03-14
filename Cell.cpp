@@ -2,7 +2,7 @@
 
 Cell::Cell(){
 	type=PLACE_NONE;
-	id='?';
+	id='!';
 	color=WHITE;
 	m=0;
 	n=0;

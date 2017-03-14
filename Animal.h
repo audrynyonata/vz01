@@ -118,7 +118,7 @@ private:
 	int heartChamber;
 	char blood;
 	double vegRatio, meatRatio;
-	char id;
+	char ani_id;
 	Color color;
 	int m;
 	int n;

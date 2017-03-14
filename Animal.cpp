@@ -14,7 +14,7 @@ using namespace std;
 		blood = 'h';
 		vegRatio = 0;
 		meatRatio = 0;
-		id = '?';
+		ani_id = '?';
 		color = RED;
 		m = 0;
 		n = 0;
@@ -32,7 +32,7 @@ using namespace std;
 		blood = _blood;
 		vegRatio = _vegRatio;
 		meatRatio = _meatRatio;
-		id = _id;
+		ani_id = _id;
 		color = _color;
 		m = _m;
 		n = _n;
@@ -50,7 +50,7 @@ using namespace std;
 		blood = A.blood;
 		vegRatio = A.vegRatio;
 		meatRatio = A.meatRatio;
-		id = A.id;
+		ani_id = A.ani_id;
 		color = A.color;
 		m = A.m;
 		n = A.n;
@@ -72,7 +72,7 @@ using namespace std;
 		blood = A.blood;
 		vegRatio = A.vegRatio;
 		meatRatio = A.meatRatio;
-		id = A.id;
+		ani_id = A.ani_id;
 		color = A.color;
 		m = A.m;
 		n = A.n;
@@ -209,7 +209,7 @@ using namespace std;
 	
 	char Animal::getId()
 	{
-		return id;
+		return ani_id;
 	}
 	
 	Color Animal::getColor()

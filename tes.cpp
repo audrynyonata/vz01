@@ -19,7 +19,7 @@ int main(){
 	a = new Animal [100];
 		
 	int indeks;
-	int j;
+	int j,k,ia,ic;
 	int temp;
 	int size;
 
@@ -31,6 +31,7 @@ int main(){
 		fin.close();
 	}
 	cout<<z;
+	cout << (z.getCell(14,14)).getId();
 	fin.open("Animal.txt");
 	if (fin.is_open()){
 		fin >> NeffA;
@@ -193,108 +194,117 @@ int main(){
 			{
 				fin >> temp;
 				tCage[j].setValue(indeks,temp);
-				//cout<<"pasangan:"<<indeks<<" "<<tCage[j].getValue(indeks)<<endl;
 			}
-			//cout << cage[j].getAnimal(0).getId() << endl;
-/*			Animal X;
-			X = cage[j].getAnimal(0);
-			cout << X.getId();
-	*/	}
+		}
 	
 		fin.close();
 	}
 	
-	for (indeks = 0; indeks<NeffA; indeks++)
+	//cetak isi tcage
+	/* int i;
+	for (j=0; j<NeffC; j++)
 	{
-		cout<< "id animal " << a[indeks].getId()<<endl;
+		indeks = 0;
+		i = 0;
+		while (indeks<tCage[j].getSize()*2 && i<tCage[j].getSize()){
+			cout<<"pasangan:"<< tCage[j].getValue(indeks) <<" "<< tCage[j].getValue(indeks+1) << tCage[j].getAnimal(i).getId() << endl;
+			indeks += 2;
+			i++;
+		}
+	}*/
+	
+/*	for (indeks = 0; indeks<NeffA; indeks++)
+	{
 		bool done= false;
 		int k = 0;
 		while ((k < NeffC) && !done)
 		{
-			cout << "cek kandang " << k << endl;
 			if (tCage[k].Search(a[indeks].getM(), a[indeks].getN()))
 			{
 				tCage[k].setAnimal(a[indeks]);
 				done = true;
-				cout << "tCage " << tCage[k].getAnimal(indeks).getId() << indeks << endl;
 			}
 			else
 			{
-			//	cout << "gagal" << endl;
 				k++;
 			}
 		}
-	}
-/*
+	}*/
+
 	for (indeks = 0; indeks<NeffA; indeks++)
 	{
-		cout<< "id animal " << a[indeks].getId()<<endl;
-		bool done= false;
-		int i = 0;
-		while ((i < NeffC) && !done)
+		cout<< "id animal " << a[indeks].getId() <<endl;
+		bool set = false;
+		bool buas = false;
+		j = 0;
+		while ((j < NeffC) &&!set)
 		{
 			cout << "cek kandang" << endl;
-			if (tCage[i].Search(a[indeks].getM(), a[indeks].getN()))
+			if (tCage[j].Search(a[indeks].getM(), a[indeks].getN()))
 			{
-				cout << "	posisi kandang cocok, cage index" << i << endl;
-				if (tCage[i].isFull()==false)
+				cout << "posisi kandang cocok, cage index" << j << endl;
+				if (!tCage[j].isFull())
 				{
-					cout<< "		kandang enggafull" <<endl; 
-					cout << 1 << endl;
-					if ((a[indeks].getHabitat() == z.getCell(tCage[i].getValue(indeks), tCage[i].getValue(indeks+1)).getId()))
+					cout<< "kandang enggafull" <<endl; 
+					if ((a[indeks].getHabitat() == z.getCell(a[indeks].getM(), a[indeks].getN()).getId()))
 					{
-						cout<< "			habitat cocok"<<endl;
-						cout << 2 << endl;
+						cout<< "habitat cocok"<<endl;
 						if (a[indeks].getWild())
 						{
-							cout<< "				hewan liar"<<endl;
-							j = 0;
-							done=true;
-							while(j<tCage[i].getSize() && done)
+							cout<< "hewan liar"<<endl;
+							k = 0;
+							while(k<tCage[j].getSize() && !set)
 							{
-								if (tCage[i].getAnimal(j).getSpecies() != a[indeks].getSpecies())
-								{
-									done=false;
-									cout << "					ketemu hewan liar lain"<<endl;
+								if ((tCage[j].getAnimal(k).getSpecies() == a[indeks].getSpecies()) || (tCage[j].getAnimal(k).getSpecies()==NONE))
+								{				
+									tCage[j].setAnimal(a[indeks]);
+									set = true;
+									cout << "sudah set"<< endl;
 								}
-								j++;
+								k++;
 							}
 						}
 						else
 						{
-							j = 0;
-							done=true;
-							cout<< "				bukan hewan liar"<<endl;
-							while(j<tCage[i].getSize() && done)
+							k = 0;
+							cout<< "bukan hewan liar"<<endl;
+							while(k<tCage[j].getSize() && !buas)
 							{
-								if (tCage[i].getAnimal(j).getWild()&&tCage[i].getAnimal(j).getSpecies()!=NONE)
+								buas = false;
+								if (tCage[j].getAnimal(k).getWild()&&tCage[j].getAnimal(k).getSpecies()!=NONE)
 								{
-									done= false;
-									cout << "						ketemu hewan liar"<<endl;
+									buas= true;
 								}
-								j++;
+								k++;
 							}
-						
+							if (!buas && k!=0)
+							{
+								tCage[j].setAnimal(a[indeks]);
+								set = true;
+								cout << "sudah set"<< endl;
+							}
 						}
 					}	
 				}
 			}
-			i++;
+			j++;
+			set = false;
+			buas = false;
 		}
-		if (done)
-			cout<<"done=true"<<endl;
-		else
-			cout<<"done=false"<<endl;
-		if (done)
-			{
-				tCage[i].setAnimal(a[indeks]);
-				cout << "Kondisi kandang setelah ditambah= size:"<< endl;
-				bool ccc = tCage[i].isFull();
-				cout<<"lalala"<<endl;
-			//	cout << tCage[i].getAnimal(indeks).getId() << endl ;
-				
-			}
-	}*/
+	}
+	
+	for (j=0; j<NeffC; j++)
+	{
+		ia = 0;
+		ic = 0;
+		while (ic<tCage[j].getSize()*2 && ia<tCage[j].getSize()){
+			cout<<"pasangan:"<< j << " " << tCage[j].getValue(ic) <<" "<< tCage[j].getValue(ic+1) << " " << tCage[j].getAnimal(ia).getId() << endl;
+			ic += 2;
+			ia++;
+		}
+	}
+	
+	
 	//cout << cage[0].getAnimal(0).getId() ;
 /*	j = 0;
 	while (j<NeffC)

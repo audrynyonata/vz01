@@ -104,7 +104,7 @@ void Cage::setAnimal(Animal v)
 	{
 		cout << " i set " << i << endl;
 		//cout << a[i].getId() << endl;
-		if (a[i].getSpecies() == NONE)
+		if (a[i].getId() == '?')
 		{
 			a[i] = v;
 			cout << a[i].getId() << endl;
