@@ -123,22 +123,6 @@ int main(){
 			ia++;
 		}
 	}*/
-
-	int i;
-	double meat = 0;
-	double veg = 0;
-	
-	for (i=0; i<NeffC; i++)
-	{
-		meat += tCage[i].ConsumedMeat();
-	}
-	cout << "meat = " << meat << " kg" << endl;
-	
-	for (i=0; i<NeffC; i++)
-	{
-		meat += tCage[i].ConsumedVeg();
-	}
-	cout << "veg = " << veg << " kg" << endl;
 	
 	delete [] a;
 	delete [] tCage;
