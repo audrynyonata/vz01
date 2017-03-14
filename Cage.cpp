@@ -149,3 +149,22 @@ Animal Cage::GetCellAnimal(int m, int n)
 	}
 	return a[i];
 }
+
+double Cage::ConsumedMeat()
+{
+	int i;
+	double sum;
+	for (i=0; i<size; i++)
+	{
+		sum += a[i].ConsumedMeat();
+	}
+}
+double Cage::ConsumedVeg()
+{
+	int i;
+	double sum;
+	for (i=0; i<size; i++)
+	{
+		sum += a[i].ConsumedVeg();
+	}
+}

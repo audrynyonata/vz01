@@ -50,6 +50,9 @@ public:
 	
 	bool isFull();
 	bool Search(int m, int n);
+	Animal GetCellAnimal(int m, int n);
+	double ConsumedMeat();
+	double ConsumedVeg();
 	
 private:
 	int size;

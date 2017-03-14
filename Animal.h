@@ -109,6 +109,9 @@ public:
 	  * @return spesies binatang
 	  */
 	Species getSpecies();
+	
+	double ConsumedMeat();
+	double ConsumedVeg();
 
 private:
 	Species species;
