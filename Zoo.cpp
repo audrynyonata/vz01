@@ -166,16 +166,16 @@ void Zoo::setTCage(Cage* c, int NeffC) {
 double Zoo::ConsumedMeat()
 {
 	double sum;
-	for (int i=0; i<size; i++)
+	for (int i=0; i<n_cage; i++)
 	{
-		sum += a[i].ConsumedMeat();
+		sum += t_cage[i].ConsumedMeat();
 	}
 }
 double Zoo::ConsumedVeg()
 {
 	double sum;
-	for (int i=0; i<size; i++)
+	for (int i=0; i<n_cage; i++)
 	{
-		sum += a[i].ConsumedVeg();
+		sum += t_cage[i].ConsumedVeg();
 	}
 }
