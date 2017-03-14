@@ -42,13 +42,14 @@ public:
 	  * @param v value
 	  */
 	void setValue(int i, int v);
-	void getValue(int i);
+	int getValue(int i);
 	int getSize();
 	void setSize(int _size);
-	void setAnimal(int i, Animal v);
+	void setAnimal(Animal v);
 	Animal getAnimal(int i);
 	
 	bool isFull();
+	bool Search(int m, int n);
 	
 private:
 	int size;

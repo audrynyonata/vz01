@@ -188,155 +188,9 @@ using namespace std;
 		return species;
 	}
 
-	istream& operator>>(istream& in, Animal& A)
-	{
-		string s,name;
-		double weight;
-		string gender;
-		Sex sex;
-		int hc;
-		char blood;
-		double vr, mr;
-		char id;
-		Color color;
-		int m;
-		int n;
-		string hab;
-		Habitat habitat;
-		
-		in >> s >> name >> weight >> gender >> hc >> blood >> vr >> mr >> id >> m >> n >> hab;
-		if (gender == "FEMALE")
-		{
-			sex = FEMALE;
-		}
-		else
-		{
-			sex = MALE;
-		}
-		
-		if (hab == "WATERANIMAL")
-		{
-			color = CYAN;
-			habitat = WATERANIMAL;
-		}
-		else if (hab == "FLYINGANIMAL")
-		{
-			color = RED;
-			habitat = FLYINGANIMAL;
-		}
-		else if (hab == "AMPHIBIAN")
-		{
-			color = GREEN;
-			habitat = AMPHIBIAN;
-		}
-		else
-		{
-			color = YELLOW;
-			habitat = LANDANIMAL;
-		}
-		
-		if (s == "ELEPHANT")
-		{
-			A = Animal (ELEPHANT, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
-		}
-		
-		else if (s == "GIRAFFE")
-		{
-			A = Animal(GIRAFFE, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,0);
-		}
-		else if (s == "LION")
-		{
-			A = Animal(LION, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,1);
-		}
-		else if (s == "TIGER")
-		{
-			A = Animal(TIGER, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,1);
-		}
-		else if (s == "ORANGUTAN")
-		{
-			A = Animal(ORANGUTAN, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,0);
-		}	
-		else if (s == "CHIMPANZEE")
-		{
-			A = Animal(CHIMPANZEE, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,0);
-		}
-		else if (s == "KOMODO")
-		{
-			A = Animal(KOMODO, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,1);
-		}
-		else if (s == "BEAR")
-		{
-			A = Animal(BEAR, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,1);
-		}
-		else if (s == "WHALE")
-		{
-			A = Animal(WHALE, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
-		}
-		else if (s == "DOLPHIN")
-		{
-			A = Animal(DOLPHIN, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
-		}
-		else if (s == "CLOWNFISH")
-		{
-			A = Animal(CLOWNFISH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
-		}
-		else if (s == "BLUETANG")
-		{
-			A = Animal(BLUETANG, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
-		}
-		else if (s == "PIRANHA")
-		{
-			A = Animal(PIRANHA, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,1);
-		}
-		else if (s == "PUFFFISH")
-		{
-			A = Animal(PUFFFISH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
-		}
-		else if (s == "EAGLE")
-		{
-			A = Animal(EAGLE, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,1);
-		}
-		else if (s == "CENDRAWASIH")
-		{
-			A = Animal(CENDRAWASIH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
-		}
-		else if (s == "OWL")
-		{
-			A = Animal(OWL, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
-		}
-		else if (s == "BAT")
-		{
-			A = Animal(BAT, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,1);
-		}
-		else if (s == "MACAU")
-		{
-			A = Animal(MACAU, name, weight, sex, hc,blood, vr, mr, id, color, m,n,habitat,0);
-		}
-		else if (s == "COCKATOO")
-		{
-			A = Animal(COCKATOO, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
-		}
-		else if (s == "FROG")
-		{
-			A = Animal(FROG, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
-		}
-		else if (s == "ALLIGATOR")
-		{
-			A = Animal(ALLIGATOR, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
-		}
-		else if (s == "HIPPOPOTAMUS")
-		{	
-			A = Animal(HIPPOPOTAMUS, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,1);
-		}
-		else if (s == "TURTLE")
-		{
-			A = Animal(TURTLE, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
-		}
-		else
-		{
-		}
-		return in;
-	}
+//	istream& operator>>(istream& in, Animal& A)
+	
+
 	
 	double Animal::getWeight()
 	{
@@ -372,10 +226,14 @@ using namespace std;
 	{
 		return n;
 	}	
-	
-	Habitat Animal::getHabitat()
+	char Animal::getHabitat()
 	{
-		return habitat;
+		if (habitat == LANDANIMAL)
+			return 'X';
+		else if (habitat == FLYINGANIMAL)
+			return 'O';
+		else if (habitat == WATERANIMAL)
+			return '#';
 	}
 
 	int Animal::getWild()

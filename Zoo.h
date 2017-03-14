@@ -58,6 +58,7 @@ public:
 	  * @param y2 kolom terbawah
 	  */	
 	void Display(int x1, int y1, int x2, int y2);
+	Cell getCell(int i, int j);
 
 private:
 	Cell** c;  	                /* matriks of pointer to cell */

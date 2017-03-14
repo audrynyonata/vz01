@@ -53,7 +53,7 @@ public:
 	/** @brief Operator>>
 	  * Overload operator istream
 	  */
-	friend istream& operator>>(istream& in, Animal& );
+//	friend istream& operator>>(istream& in, Animal& );
 	
 	/** @brief GetWeight
 	  * @return berat binatang
@@ -91,9 +91,9 @@ public:
 	  int getN();
 	  
 	/** @brief GetHabitat
-	  * @return Habitat binatang
+	  * @return char representasi Habitat binatang
 	  */
-	  Habitat getHabitat();
+	  char getHabitat();
 	  /** @brief getWild
 	  * @return buas / tidak nya binatang, 1=buas, 0=jinak
 	  */

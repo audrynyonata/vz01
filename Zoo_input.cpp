@@ -8,11 +8,11 @@ using namespace std;
 
 int main(){
 	ifstream fin;
-	Zoo a(3,3);
+	Zoo z;
 
 	fin.open("zoo.txt");
-	fin >> a;
-	cout << a;
+	fin >> z;
+	cout << z;
 
 
 	fin.close();

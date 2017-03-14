@@ -72,10 +72,11 @@ istream& operator>>(istream& in, Zoo& Z)
 
   	in >> r >> c;
   	Zoo input(r, c);
-
+  	
   	for(int i=0; i<r; i++){
     	for(int j=0; j<c; j++){
      		in >> k;
+  	
       		switch (k){
 	        	case '#' : input.c[i][j] = Cell(WATERHABITAT,'#',WHITE,i,j); break;
 	        	case 'O' : input.c[i][j] = Cell(AIRHABITAT,'O',WHITE,i,j); break;
@@ -85,6 +86,7 @@ istream& operator>>(istream& in, Zoo& Z)
 	        	case '-' : input.c[i][j] = Cell(ROAD,'-',WHITE,i,j); break;
 	        	case 'i' : input.c[i][j] = Cell(ENTRANCE,'i',WHITE,i,j); break;
 	        	case 'o' : input.c[i][j] = Cell(EXIT,'o',WHITE,i,j); break;
+ 
       		}
     	}
   	}
@@ -111,4 +113,9 @@ void Zoo::Display(int x1, int y1, int x2, int y2){
     	}
     cout << endl;
   	}
+}
+
+Cell Zoo::getCell(int i, int j)
+{
+	return c[i][j];
 }
