@@ -98,19 +98,6 @@ istream& operator>>(istream& in, Zoo& Z)
       }
     }
   }
-  for(int i=0;i<input.n_cage;i++) {
-    in >> s;
-    input.t_cage[i].setSize(s);
-    cout<<"123"<<endl;
-    cout<<i<<endl;
-    for (int j =0 ; j<(input.t_cage[i].getSize()*2) ; j++) {
-      in >> temp;
-      input.t_cage[i].setValue(j,temp);
-      cout<<"lololo332"<<endl;
-    }
-    cout<<"kokokk ke-"<<i<<endl;
-  }
-  cout<<"finish"<<endl;
   Z = input;
   return in;
 }
