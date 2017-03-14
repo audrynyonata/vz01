@@ -3,6 +3,7 @@
 
 Zoo::Zoo(){
   c= new Cell* [def_row];
+  n_cage = def_cage;
   for (int i=0;i<def_row;i++)
   {
     c[i]= new Cell [def_col];
@@ -102,6 +103,8 @@ istream& operator>>(istream& in, Zoo& Z)
   return in;
 }
 
+
+
 ostream& operator<<(ostream& os, const Zoo& Z){
   char cc;
   for(int i=0; i<Z.row; i++) {
@@ -167,3 +170,5 @@ double Zoo::ConsumedVeg()
 		sum += t_cage[i].ConsumedVeg();
 	}
 }
+
+void set
