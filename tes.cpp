@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <ctime>
+#include <cstdlib>
 #include "Zoo.h"
 #include "Cage.h"
 #include "Cell.h"
