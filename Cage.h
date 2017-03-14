@@ -52,6 +52,15 @@ public:
 	bool Search(int m, int n);
 	Animal GetCellAnimal(int m, int n);
 	
+	/** @brief Mengembalikan jumlah daging yang diperlukan kebun binatang dalam 1 hari
+	  * @return jumlah daging
+	  */
+	double ConsumedMeat();
+	/** @brief Mengembalikan jumlah tumbuhan yang diperlukan kebun binatang dalam 1 hari
+	  * @return jumlah tumbuhan
+	  */
+	double ConsumedVeg();
+	
 private:
 	int size;
 	int * c;

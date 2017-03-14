@@ -72,11 +72,14 @@ public:
 	  */
 	Cage getCage (int i);
 
-	/** @brief Mengisi cage dari cage lain
-	  * @param c array of cage yang ingin disalin
-	  * @param NeffC banyaknya kandang
+	/** @brief Mengembalikan jumlah daging yang diperlukan kebun binatang dalam 1 hari
+	  * @return jumlah daging
 	  */
-	void setTCage(Cage* c, int NeffC);
+	double ConsumedMeat();
+	/** @brief Mengembalikan jumlah tumbuhan yang diperlukan kebun binatang dalam 1 hari
+	  * @return jumlah tumbuhan
+	  */
+	double ConsumedVeg();
 
 private:
 	Cell** c;  	                /* matriks of cell */

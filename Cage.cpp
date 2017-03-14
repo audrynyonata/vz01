@@ -131,6 +131,23 @@ bool Cage::Search(int m, int n)
 	return found;
 }
 
+double Cage::ConsumedMeat()
+{
+	double sum;
+	for (int i=0; i<size; i++)
+	{
+		sum += a[i].ConsumedMeat();
+	}
+}
+double Cage::ConsumedVeg()
+{
+	double sum;
+	for (int i=0; i<size; i++)
+	{
+		sum += a[i].ConsumedVeg();
+	}
+}
+
 Animal Cage::GetCellAnimal(int m, int n)
 //Jika suatu sel tidak punya animal, sebenarnya ada animal dengan spesies=NONE
 {
@@ -148,4 +165,12 @@ Animal Cage::GetCellAnimal(int m, int n)
 		}
 	}
 	return a[i];
+}
+
+void Cage::PrintInteract()
+{
+	for (int i=0; i<size; i++)
+	{
+		a[i].interact();
+	}
 }
