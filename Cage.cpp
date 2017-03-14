@@ -130,3 +130,22 @@ bool Cage::Search(int m, int n)
 	}
 	return found;
 }
+
+Animal Cage::GetCellAnimal(int m, int n)
+//Jika suatu sel tidak punya animal, sebenarnya ada animal dengan spesies=NONE
+{
+	int i=0;
+	bool found=false;
+	while (i<size && !found)
+	{
+		if ((a[i].getM() == m) && (a[i].getN() ==n))
+		{
+			found = true;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	return a[i];
+}
