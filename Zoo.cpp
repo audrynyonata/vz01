@@ -157,10 +157,11 @@ Cage Zoo::getCage(int i) {
   return t_cage[i];
 }
 
-void Zoo::setTCage(Cage* c, int NeffC) {
-  for (int i=0;i<NeffC;i++) {
-    t_cage[i]=c[i];
-  }
+Cage Zoo::getNCage() {
+  return n_cage;
+}
+Cage Zoo::setNCage(int n) {
+  n_cage = n;
 }
 
 double Zoo::ConsumedMeat()

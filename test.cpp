@@ -9,39 +9,27 @@
 #include "Animal.h"
 using namespace std;
 
-void ReadCage(Cage* tCage, int &NeffC, Animal* a, int &NeffA){
+void ReadZoo (Zoo z){
+	//Zoo z;
 	ifstream fin;
-	int NeffA, NeffC;
-		
-	int indeks,j,k,ia,ic;
-	int temp;
-	int size;
-
-	Zoo z;
 	fin.open("zoo.txt");
 	if (fin.is_open())
 	{
 		fin >> z;
 		fin.close();
 	}
-	cout<<z;
-	
-	fin.open("Animal.txt");
-	if (fin.is_open()){
-		fin >> NeffA;
-		a = new Animal [NeffA];
-		
-		for (j =0;j<NeffA;j++)
-		{
-			fin >> a[j];
-		}
-		fin.close();
-	}
-	
+	//cout<<z;
+}
+
+void ReadCage(Zoo z)
+{
+	ifstream fin;
+	int NeffC, indeks, j, k, ia, ic, temp, size;
 	fin.open("cage.txt");
 	if (fin.is_open()){
 		fin >> NeffC;
-		tCage = new Cage [NeffC];
+		z.setNCage(NeffC);
+		z.t_Cage = new Cage [z.getNCage()];
 		for(j=0;j<NeffC;j++)
 		{
 			fin >> size;
@@ -55,7 +43,28 @@ void ReadCage(Cage* tCage, int &NeffC, Animal* a, int &NeffA){
 	
 		fin.close();
 	}
+}
 
+void ReadAnimal(Animal *a)
+{
+	ifstream fin;
+	int NeffA, indeks, j, k, ia, ic, temp, size;
+	fin.open("Animal.txt");
+	if (fin.is_open()){
+		fin >> NeffA;
+		a = new Animal [NeffA];
+		
+		for (j =0;j<NeffA;j++)
+		{
+			fin >> a[j];
+		}
+		fin.close();
+	}
+}
+	
+	
+void AnimalToCage(Zoo z, Animal *a)
+{
 	for (indeks = 0; indeks<NeffA; indeks++)
 	{
 		bool set = false;
@@ -108,6 +117,7 @@ void ReadCage(Cage* tCage, int &NeffC, Animal* a, int &NeffA){
 			buas = false;
 		}
 	}
+}
 
 	//cetak tCage
 /*	for (j=0; j<NeffC; j++)
@@ -121,22 +131,17 @@ void ReadCage(Cage* tCage, int &NeffC, Animal* a, int &NeffA){
 		}
 	}*/
 	
-	delete [] a;
-	delete [] tCage;
-	return 0;
 }
 
 int main(){
-	Cage * tCage;
+	Zoo z;
 	Animal * a;
-	int i, NeffC, NeffA;
-	double meat = 0;
-	double veg = 0;
 	
-	ReadFile(tCage, NeffC, a, NeffA);
-	for (i=0; i<NeffC; i++)
-	{
-		meat += tCage[i].ConsumedMeat();
-	}
-	cout << "meat " << meat << endl;
+	ReadZoo(z);
+	ReadCage(z);
+	ReaAnimal(a);
+	AnimalToCage(z,a); 
+	
+	delete [] a;
+	return 0;
 }

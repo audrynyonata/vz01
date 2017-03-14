@@ -1,7 +1,8 @@
 /* NIM/Nama  : 13515057 / Erick Wijaya */
 /* File      : Animal.h                */
 
-#pragma once
+#ifndef ANIMAL_H
+#define ANIMAL_H
 
 #include "other.h"
 #include <iostream>
@@ -134,3 +135,4 @@ private:
 	Habitat habitat;
 	int wild;
 };
+#endif

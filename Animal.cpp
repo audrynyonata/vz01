@@ -305,7 +305,7 @@ istream& operator>>(istream& in, Animal& a)
 	}
 	else if (s == "BAT")
 	{
-		a = Animal(BAT, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,1);
+		a = Animal(BAT, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
 	}
 	else if (s == "MACAU")
 	{

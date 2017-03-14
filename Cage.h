@@ -1,8 +1,9 @@
 /* NIM/Nama  : 13515057 / Erick Wijaya */
 /* File      : Cage.h                */
 
-#pragma once
-
+#ifndef CAGE_H
+#define CAGE_H
+ 
 #include "other.h"
 #include "Animal.h"
 #include "Cell.h"
@@ -71,3 +72,4 @@ private:
 	int * c;
 	Animal * a;	
 };
+#endif

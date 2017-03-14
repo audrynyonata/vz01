@@ -1,4 +1,6 @@
-#pragma once
+
+#ifndef CELL_H
+#define CELL_H
 
 #include "other.h"
 
@@ -51,3 +53,4 @@ private:
 	int m;
 	int n;
 };
+#endif

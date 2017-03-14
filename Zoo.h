@@ -1,7 +1,9 @@
 /* NIM/Nama  : 13515087 / Audry Nyonata   */
 /* File      : Zoo.h                */
 
-#pragma once
+#ifndef ZOO_H
+#define ZOO_H
+
 #include "Cell.h"
 #include "Cage.h"
 #include <iostream>
@@ -80,6 +82,9 @@ public:
 	  * @return jumlah tumbuhan
 	  */
 	double ConsumedVeg();
+	
+	Cage getNCage();
+	Cage setNCage(int n);
 
 private:
 	Cell** c;  	                /* matriks of cell */
@@ -91,3 +96,4 @@ private:
 	static const int def_col = 50; 	/* default kolom = 10*/
 	static const int def_cage = 50; 	/* default baris = 10 */
 };
+#ndif;
