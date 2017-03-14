@@ -188,9 +188,150 @@ using namespace std;
 		return species;
 	}
 
-//	istream& operator>>(istream& in, Animal& A)
+	istream& operator>>(istream& in, Animal& a)
+	{
+		string s,name;
+		double weight;
+		string gender;
+		Sex sex;
+		int hc;
+		char blood;
+		double vr, mr;
+		char id;
+		Color color;
+		int m;
+		int n;
+		string hab;
+		Habitat habitat;
 	
-
+		in >> s >> name >> weight >> gender >> hc >> blood >> vr >> mr >> id >> m >> n >> hab;
+		if (gender == "FEMALE")
+		{
+			sex = FEMALE;
+		}
+		else
+		{
+			sex = MALE;
+		}
+		
+		if (hab == "WATERANIMAL")
+		{
+			color = CYAN;
+			habitat = WATERANIMAL;
+		}
+		else if (hab == "FLYINGANIMAL")
+		{
+			color = RED;
+			habitat = FLYINGANIMAL;
+		}
+		else if (hab == "AMPHIBIAN")
+		{
+			color = GREEN;
+			habitat = AMPHIBIAN;
+		}
+		else
+		{
+			color = YELLOW;
+			habitat = LANDANIMAL;
+		}
+		
+		if (s == "ELEPHANT")
+		{
+			a = Animal (ELEPHANT, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
+		}	
+		else if (s == "GIRAFFE")
+		{
+			a = Animal(GIRAFFE, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,0);
+		}
+		else if (s == "LION")
+		{
+			a = Animal(LION, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,1);
+		}
+		else if (s == "TIGER")
+		{
+			a = Animal(TIGER, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,1);
+		}
+		else if (s == "ORANGUTAN")
+		{
+			a = Animal(ORANGUTAN, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,0);
+		}	
+		else if (s == "CHIMPANZEE")
+		{
+			a = Animal(CHIMPANZEE, name, weight, sex, hc,  blood, vr, mr, id, color, m,n,habitat,0);
+		}
+		else if (s == "KOMODO")
+		{
+			a = Animal(KOMODO, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,1);
+		}
+		else if (s == "BEAR")
+		{
+			a = Animal(BEAR, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,1);
+		}
+		else if (s == "WHALE")
+		{
+			a = Animal(WHALE, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
+		}
+		else if (s == "DOLPHIN")
+		{
+			a = Animal(DOLPHIN, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
+		}
+		else if (s == "CLOWNFISH")
+		{
+			a = Animal(CLOWNFISH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
+		}
+		else if (s == "BLUETANG")
+		{
+			a = Animal(BLUETANG, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
+		}
+		else if (s == "PIRANHA")
+		{
+			a = Animal(PIRANHA, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,1);
+		}
+		else if (s == "PUFFFISH")
+		{
+			a = Animal(PUFFFISH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
+		}
+		else if (s == "EAGLE")
+		{
+			a = Animal(EAGLE, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,1);
+		}
+		else if (s == "CENDRAWASIH")
+		{
+			a = Animal(CENDRAWASIH, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
+		}
+		else if (s == "OWL")
+		{
+			a = Animal(OWL, name, weight, sex, hc, blood,  vr, mr, id, color, m,n,habitat,0);
+		}
+		else if (s == "BAT")
+		{
+			a = Animal(BAT, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,1);
+		}
+		else if (s == "MACAU")
+		{
+			a = Animal(MACAU, name, weight, sex, hc,blood, vr, mr, id, color, m,n,habitat,0);
+		}
+		else if (s == "COCKATOO")
+		{
+			a = Animal(COCKATOO, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
+		}
+		else if (s == "FROG")
+		{
+			a = Animal(FROG, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
+		}
+		else if (s == "ALLIGATOR")
+		{
+			a = Animal(ALLIGATOR, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
+		}
+		else if (s == "HIPPOPOTAMUS")
+		{	
+			a = Animal(HIPPOPOTAMUS, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,1);
+		}
+		else if (s == "TURTLE")
+		{
+			a = Animal(TURTLE, name, weight, sex, hc, blood, vr, mr, id, color, m,n,habitat,0);
+		}
+	}
 	
 	double Animal::getWeight()
 	{
@@ -234,6 +375,8 @@ using namespace std;
 			return 'O';
 		else if (habitat == WATERANIMAL)
 			return '#';
+		else if (habitat == AMPHIBIAN)
+			return 'Q';
 	}
 
 	int Animal::getWild()

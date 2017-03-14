@@ -17,10 +17,6 @@ using namespace std;
 		{
 			c[indeks]=0;
 		}
-		/*for (int indeks = 0; indeks < size ; indeks++)
-		{
-			Animal a[indeks];
-		}*/
 	}
 	
 	Cage::Cage(int _size)
@@ -32,10 +28,6 @@ using namespace std;
 		{
 			c[indeks]=0;
 		}
-		/*for (int indeks = 0; indeks < size ; indeks++)
-		{
-			Animal a[indeks];
-		}*/
 	}
 	
 	Cage::Cage(const Cage& C)
@@ -47,10 +39,6 @@ using namespace std;
 		{
 			c[indeks]=C.c[indeks];
 		}	
-		/*for (int indeks = 0; indeks < size ; indeks++)
-		{
-			a[indeks] = C.a[indeks];
-		}*/
 	}
 	
 	Cage::~Cage()
@@ -102,12 +90,9 @@ void Cage::setAnimal(Animal v)
 	bool done = false;
 	while (i < size && !done)
 	{
-		cout << " i set " << i << endl;
-		//cout << a[i].getId() << endl;
 		if (a[i].getId() == '?')
 		{
 			a[i] = v;
-			cout << a[i].getId() << endl;
 			done = true;
 		}
 		i++;
@@ -122,12 +107,9 @@ bool Cage::isFull()
 	int count = 0;
 	for (int i=0; i<size; i++)
 	{
-		//cout << a[i].getId()<< endl;
 		if (a[i].getSpecies() != NONE)
 			count++;
 	}
-	cout << "size="<<size << endl;
-	cout << "count="<<count << endl;
 	return (count > 0.3*size);
 }
 
@@ -137,8 +119,6 @@ bool Cage::Search(int m, int n)
 	bool found = false;
 	while (i < size*2 && !found)
 	{
-		//cout << "m " << c[i] << endl;
-		//cout << "n " << c[i+1] << endl;
 		if (c[i] == m && c[i+1] == n)
 		{
 			found = true;

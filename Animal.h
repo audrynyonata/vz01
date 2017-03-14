@@ -53,7 +53,7 @@ public:
 	/** @brief Operator>>
 	  * Overload operator istream
 	  */
-//	friend istream& operator>>(istream& in, Animal& );
+	friend istream& operator>>(istream& in, Animal& );
 	
 	/** @brief GetWeight
 	  * @return berat binatang
