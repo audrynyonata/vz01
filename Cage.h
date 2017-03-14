@@ -64,7 +64,7 @@ public:
 	/** @brief PrintInteract
 	  * Memanggil interact milik semua binatang di kandang
 	  */
-	void Cage::PrintInteract()
+	void PrintInteract();
 
 private:
 	int size;
