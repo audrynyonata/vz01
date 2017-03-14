@@ -109,6 +109,15 @@ public:
 	  * @return spesies binatang
 	  */
 	Species getSpecies();
+	
+	/** @brief Mengembalikan jumlah daging yang diperlukan kebun binatang dalam 1 hari
+	  * @return jumlah daging
+	  */
+	double ConsumedMeat();
+	/** @brief Mengembalikan jumlah tumbuhan yang diperlukan kebun binatang dalam 1 hari
+	  * @return jumlah tumbuhan
+	  */
+	double ConsumedVeg();
 
 private:
 	Species species;

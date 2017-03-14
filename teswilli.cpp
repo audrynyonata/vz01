@@ -3,8 +3,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <ctime>
-#include <cstdlib>
 #include "Zoo.h"
 #include "Cage.h"
 #include "Cell.h"
@@ -12,25 +10,18 @@
 using namespace std;
 
 int main(){
-	Cage * tCage;
-	Animal * a;
-	
 	ifstream fin;
-	int NeffA, NeffC;
-		
-	int indeks,j,k,ia,ic;
-	int temp;
-	int size;
 
+	cout<<"lalala"<<endl;
 	Zoo z;
 	fin.open("zoo.txt");
-	if (fin.is_open())
+	while (fin >> z)
 	{
-		fin >> z;
-		fin.close();
+		
 	}
+	fin.close();
 	cout<<z;
-	
+	/*
 	fin.open("Animal.txt");
 	if (fin.is_open()){
 		fin >> NeffA;
@@ -42,24 +33,9 @@ int main(){
 		}
 		fin.close();
 	}
-	
-	fin.open("cage.txt");
-	if (fin.is_open()){
-		fin >> NeffC;
-		tCage = new Cage [NeffC];
-		for(j=0;j<NeffC;j++)
-		{
-			fin >> size;
-			tCage[j] = Cage(size);
-			for (indeks =0 ; indeks<(size*2) ; indeks++)
-			{
-				fin >> temp;
-				tCage[j].setValue(indeks,temp);
-			}
-		}
-	
-		fin.close();
-	}
+	*/
+	//cout<<z;
+	/*
 
 	for (indeks = 0; indeks<NeffA; indeks++)
 	{
@@ -113,36 +89,9 @@ int main(){
 			buas = false;
 		}
 	}
-
-	//cetak tCage
-/*	for (j=0; j<NeffC; j++)
-	{
-		ia = 0;
-		ic = 0;
-		while (ic<tCage[j].getSize()*2 && ia<tCage[j].getSize()){
-			cout<<"pasangan:"<< j << " " << tCage[j].getAnimal(ia).getM() <<" "<< tCage[j].getAnimal(ia).getN() << " " << tCage[j].getAnimal(ia).getId() << endl;
-			ic += 2;
-			ia++;
-		}
-	}*/
-
-	int i;
-	double meat = 0;
-	double veg = 0;
+	z.setTCage(tCage,NeffC);
+	cout<<z;
+	*/
 	
-	for (i=0; i<NeffC; i++)
-	{
-		meat += tCage[i].ConsumedMeat();
-	}
-	cout << "meat = " << meat << " kg" << endl;
-	
-	for (i=0; i<NeffC; i++)
-	{
-		meat += tCage[i].ConsumedVeg();
-	}
-	cout << "veg = " << veg << " kg" << endl;
-	
-	delete [] a;
-	delete [] tCage;
 	return 0;
 }

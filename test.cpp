@@ -3,18 +3,13 @@
 
 #include <iostream>
 #include <fstream>
-#include <ctime>
-#include <cstdlib>
 #include "Zoo.h"
 #include "Cage.h"
 #include "Cell.h"
 #include "Animal.h"
 using namespace std;
 
-int main(){
-	Cage * tCage;
-	Animal * a;
-	
+void ReadCage(Cage* tCage, int &NeffC, Animal* a, int &NeffA){
 	ifstream fin;
 	int NeffA, NeffC;
 		
@@ -125,24 +120,23 @@ int main(){
 			ia++;
 		}
 	}*/
-
-	int i;
-	double meat = 0;
-	double veg = 0;
-	
-	for (i=0; i<NeffC; i++)
-	{
-		meat += tCage[i].ConsumedMeat();
-	}
-	cout << "meat = " << meat << " kg" << endl;
-	
-	for (i=0; i<NeffC; i++)
-	{
-		meat += tCage[i].ConsumedVeg();
-	}
-	cout << "veg = " << veg << " kg" << endl;
 	
 	delete [] a;
 	delete [] tCage;
 	return 0;
+}
+
+int main(){
+	Cage * tCage;
+	Animal * a;
+	int i, NeffC, NeffA;
+	double meat = 0;
+	double veg = 0;
+	
+	ReadFile(tCage, NeffC, a, NeffA);
+	for (i=0; i<NeffC; i++)
+	{
+		meat += tCage[i].ConsumedMeat();
+	}
+	cout << "meat " << meat << endl;
 }
